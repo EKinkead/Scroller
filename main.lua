@@ -8,7 +8,7 @@ display.setDefault ("magTextureFilter", "nearest") -- make it nice and pixeled
 
 -- Some kind of map thing
 --foot = display.newImage("mapTile1.png", 100, 100)
-local myText = display.newText( "Hello World!", 0, 0, native.systemFont, 16 )
+local myText = display.newText( "Hello TileMap!", 300, 0, native.systemFont, 16 )
 local currentMap = {}
 
 -- Set up the map. Best to NOT do this with hardcoded Numbers, so you can make minimaps, etc.
@@ -56,11 +56,11 @@ for row=1, (currentMap.mapHeigth) do  -- This will start at the top first row an
 				
 				tileNumber = currentMap.mapData [((currentMap.mapWidth*(row-1))+ (column)  ) ] 
 				-- print (currentMap.mapData [((currentMap.mapWidth*(row-1))+ (column)  ) ] )
-				io.write (tileNumber)
+				io.write (tileNumber) -- this will print the column in the Terminal
 				--Now that we have the correct tile, lets append the correct filename for the tile.
 				--currentTile = display.newImage( "/images/mapTile1.png" )
 				currentTile = display.newImage( "images/mapTile" .. tileNumber .. ".png" )
-				currentTile.x = 10
+				currentTile.x = 10 
 				currentTile.y = 10 
 				
 
@@ -69,19 +69,8 @@ for row=1, (currentMap.mapHeigth) do  -- This will start at the top first row an
 
 			end
 
-			drawY = drawY + 20
+			drawY = drawY + 20 -- this moves the tiledrawn down 1 on the app screen
 
-			io.write ("\n")
-			-- IGNORE BELOW
-			-- group.maps.groups['ScrollMap']:insert(myMapGroup)
-			-- group.maps.groups['ScrollMap']:insert(pointer)
-
-			----print ("WTF")
-			--
-			--
-			--  Draw the exclamations on the screen or something
-			--
-			--
-			--
+			io.write ("\n") -- This moves the terminal to the next line
 
 end
